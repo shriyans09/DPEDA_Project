@@ -53,21 +53,6 @@ if st.button("Describe Table Statistics"):
     st.write("Summary statistics for each column in the dataset:")
     st.dataframe(df.describe(include='all'))
 
-
-# Sidebar Filters
-# st.sidebar.header("Filters")
-# age_group = st.sidebar.selectbox("Select Age", df['Age'].dropna().unique())
-# category = st.sidebar.selectbox("Select Product Category", df['Category'].dropna().unique())
-# gender = st.sidebar.selectbox("Select Gender", df['Gender'].dropna().unique())
-
-
-# Apply Filters to Data
-# filtered_df = df[(df['Age'] == age_group) &
-#                  (df['Category'] == category) &
-#                  (df['Gender'] == gender)]
-
-# *****************************
-
 #change no review to NaN in review column
 df['Reviews'] = df['Reviews'].replace('No Review', np.nan)
 df = df.dropna()
